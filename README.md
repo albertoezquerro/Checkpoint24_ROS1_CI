@@ -35,6 +35,7 @@ jenkins_address
 admin: admin
 ```
 You sholud see the CP24_ROS1_CI when you login 
+
 <img width="1352" alt="image" src="https://github.com/leokim0711092/Checkpoint24_ROS1_CI/assets/106298370/8c7c9ae0-c152-4992-8a52-f4227d62d933">
 
 
@@ -56,13 +57,3 @@ After the execution is complete, you will be able to see the below outputs:
 
 <img width="613" alt="image" src="https://github.com/leokim0711092/Checkpoint24_ROS1_CI/assets/106298370/f70fbf11-0ac8-4bc9-963c-ad82569f9314">
 
-
-## Credits
-
-This code is provided with the support of [TheConstruct](https://www.theconstructsim.com/)'s team. Feel free to use and modify it for your own projects.
-
-## Author
-
-- Naveenraj Kamalakannan
-
-- Contact: therealnaveenkamal@gmail.com
