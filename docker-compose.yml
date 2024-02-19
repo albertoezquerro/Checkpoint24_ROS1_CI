@@ -1,0 +1,9 @@
+version: '3'
+
+services:
+  Jenkins_test:
+    image: leokim10073-cp24:ros1 
+    environment:
+      - DISPLAY=:2
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix
