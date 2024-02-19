@@ -34,8 +34,9 @@ jenkins_address
 ```
 admin: admin
 ```
-This is your Jenkins Dashboard.
-![Jenkins Dashboard](https://github.com/therealnaveenkamal/ros1_ci_final/assets/80611084/002741a9-fdf1-498c-ad96-82fc4f7f6f2e)
+You sholud see the CP24_ROS1_CI when you login 
+<img width="1352" alt="image" src="https://github.com/leokim0711092/Checkpoint24_ROS1_CI/assets/106298370/8c7c9ae0-c152-4992-8a52-f4227d62d933">
+
 
 3\. Now let's trigger the build through a pull request:
 
@@ -43,19 +44,18 @@ This is your Jenkins Dashboard.
 1. Add a new file to this repository and ask to merge.
 2. Once the request to merge is accepted, monitor the CP24-ROS1 pipeline and the platform's display.
 ```
-The SCM polling runs every minute and when a new commit is captured, a new build (here #2) is triggered.
-![CP24-ROS1 Pipeline Running](https://github.com/therealnaveenkamal/ros1_ci_final/assets/80611084/3829191c-e2c0-4653-923a-38ae68d240a2)
 
 ## Output
 
-To view the terminal outputs, you have to navigate to the Console Output in the navigation bar
-![Console Output](https://github.com/therealnaveenkamal/ros1_ci_final/assets/80611084/1324beec-c35e-414e-9d7d-657fce9bfb60)
+View consile output in Jenkins to check result
+<img width="261" alt="image" src="https://github.com/leokim0711092/Checkpoint24_ROS1_CI/assets/106298370/3f5f084d-a290-40eb-9d44-7caad9ab7e91">
 
 After the execution is complete, you will be able to see the below outputs:
 
-![Gazebo Output](https://github.com/therealnaveenkamal/ros1_ci_final/assets/80611084/25b93475-ca15-47f9-9a1c-6f8ccbd9c066)
+<img width="649" alt="image" src="https://github.com/leokim0711092/Checkpoint24_ROS1_CI/assets/106298370/25720cd1-b630-4db4-bedd-70a20e0fb00c">
 
-![Waypoint Node Test](https://github.com/therealnaveenkamal/ros1_ci_final/assets/80611084/9e8ac9e2-e1fc-49ee-b11a-bab6cc28eb8a)
+<img width="613" alt="image" src="https://github.com/leokim0711092/Checkpoint24_ROS1_CI/assets/106298370/f70fbf11-0ac8-4bc9-963c-ad82569f9314">
+
 
 ## Credits
 
