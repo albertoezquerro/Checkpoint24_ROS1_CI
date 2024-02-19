@@ -17,7 +17,6 @@ The Jenkins pipeline coordinates a sequence of vital tasks. Initially, it gains 
 If there is no run_jenkins.sh in the repository:
 ```
 wget https://raw.githubusercontent.com/TheConstructAi/jenkins_demo/master/run_jenkins.sh && bash run_jenkins.sh
-jenkins_address
 ```
 If run_jenkins.sh exists in the repository:
 
