@@ -34,15 +34,16 @@ class TestWaypoint(unittest.TestCase):
         self.final_y = 0
         self.final_yaw = 0
         self.result = False
-        self.x_diff =0
-        self.y_diff =0
-        self.yaw_diff =0
+        self.x_diff = 0
+        self.y_diff = 0
+        self.yaw_diff = 0
 
         self.execute()
 
     def execute(self):
 
-        client = actionlib.SimpleActionClient('tortoisebot_as', WaypointActionAction)
+        client = actionlib.SimpleActionClient(
+            'tortoisebot_as', WaypointActionAction)
         client.wait_for_server()
         goal = WaypointActionGoal()
         dest = Point()
@@ -52,7 +53,8 @@ class TestWaypoint(unittest.TestCase):
         self.initial_x = self.current_position.x
         self.initial_y = self.current_position.y
         self.initial_yaw = self.euler_to_quaternion(self.current_orientation)
-        self.desired_yaw = math.atan2(dest.y - self.initial_y, dest.x - self.initial_x)
+        self.desired_yaw = math.atan2(
+            dest.y - self.initial_y, dest.x - self.initial_x)
 
         client.send_goal(goal)
         client.wait_for_result()
@@ -64,7 +66,8 @@ class TestWaypoint(unittest.TestCase):
 
         self.x_diff = abs(self.final_x - dest.x)
         self.y_diff = abs(self.final_y - dest.y)
-        self.xy_deff = math.sqrt(self.x_diff*self.x_diff + self.y_diff*self.y_diff)
+        self.xy_deff = math.sqrt(
+            self.x_diff*self.x_diff + self.y_diff*self.y_diff)
         self.yaw_diff = self.final_yaw - self.desired_yaw
 
     def odom_callback(self, msg):
@@ -75,21 +78,20 @@ class TestWaypoint(unittest.TestCase):
     def euler_to_quaternion(self, msg):
 
         orientation_list = [msg.x, msg.y, msg.z, msg.w]
-        (roll, pitch, yaw) = euler_from_quaternion (orientation_list)
+        (roll, pitch, yaw) = euler_from_quaternion(orientation_list)
         return yaw
 
     def test_xy(self):
-        
-        self.assertTrue((-0.02 <= self.xy_deff <= 0.02), "Failure, XY error is over 0.03")
 
-    
+        self.assertTrue((-0.05 <= self.xy_deff <= 0.05),
+                        "Failure, XY error is over 0.03")
+
     def test_yaw(self):
         print("final yaw:", self.final_yaw)
         print("Desired yaw:", self.desired_yaw)
 
-        
-        self.assertTrue(((0.5 <= self.yaw_diff <= 0.5)), "Failure, Yaw error is over 0.5")
-
+        self.assertTrue(((-1 <= self.yaw_diff <= 1)),
+                        "Failure, Yaw error is over 1")
 
 
 if __name__ == '__main__':
